@@ -68,3 +68,23 @@ def test_get_nth_fibonacci_ten():
 
     # Assert
     assert result == 55
+
+def test_get_nth_fibonacci_twenty():
+    assert get_nth_fibonacci(20) == 6765
+
+
+def test_get_nth_fibonacci_negative_raises():
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(-5)
+
+def test_get_nth_fibonacci_small_sequence():
+    expected = [0, 1, 1, 2, 3, 5]
+    for i, val in enumerate(expected):
+        assert get_nth_fibonacci(i) == val
+
+def test_get_nth_fibonacci_zero():
+    assert get_nth_fibonacci(0) == 0
+
+def test_area_of_circle_negative_radius_raises():
+    with pytest.raises(ValueError):
+        area_of_circle(-1)    
